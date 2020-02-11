@@ -22,4 +22,24 @@ s=Student('bob',23)
 
 #s.score(33)
 print(s.score())
+5.在引用类时，如上类时，要先s=student()再s.name....不能写成s=student.name....,即要分开写！
 
+6.再调用类后，会将类_init_中初始定义的一些东西执行一遍，之后会记录过程量的值，直到重新定义类才会按初始值进行，例子如下（该例子用来理解minst中训练迭代）：
+class we(object):
+    def __init__(self):
+        self.a=0
+    def dea(self,bb):
+        self.bb=self.a
+        self.a += bb
+        return self.bb
+dd=we()
+
+mm=dd.dea(2)
+nn=dd.dea(2)
+nn=dd.dea(2)
+print(nn)
+dd=we()
+nn=dd.dea(2)
+nn=dd.dea(2)
+print(nn)
+nn=we.dea(2)
